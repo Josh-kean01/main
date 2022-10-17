@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instacart</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            overflow-x: hidden;
+        }
+       .modal-content{
+        z-index: -1;
+       }
+       #a{
+        color: #14B014;
+       }
+       #a:hover{
+        text-decoration: underline;
+       }
+
+       .a{
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.808);
+       }
+       .z{
+        box-shadow: 1px 2px 3px grey;
+        border: none;
+        border-radius: 4%;
+        padding: 3%;
+        cursor: pointer;
+       }
+       .z:hover{
+        box-shadow: 2px 4px 6px gray;
+        border: none;
+        border-radius: 4%;
+        padding: 3%;
+        cursor: pointer;
+       }
+       #accordionPanelsStayOpenExample{
+        width: 75%;
+        margin-left: 12%;
+       }
+       
+       @media (min-width: 576px){
+        .accordion-flush{
+        display: none;
+        }
+       }
+       @media (max-width: 576px){
+        .axa,#rer{
+        display: none;
+        }
+        #oii{
+            height: 50px;
+        }
+       }
+
+    </style>
+</head>
+<body class="">
+  <nav class="navbar bg-light px-3 py-4">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand position-absolute ms-5 ps-3"  href="#"><img src="images/1.svg"></a>
+            <!-- Modal -->
+            <div class="dropdown">
+                <a class="btn dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Other Projects
+                </a>
+              
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="whatsapp.html">WhatsApp</a></li>
+                  <li><a class="dropdown-item" href="name.html">Name</a></li>
+                  <li><a class="dropdown-item" href="instacart.html">Instacart</a></li>
+                </ul>
+            </div>
+        <span>
+            <button type="button" class="btn" data-bs-toggle="modal" href="#exampleModal">
+                Log in
+            </button>
+            <a class="btn btn-success rounded-5" href="#" onclick="test()">Sign Up</a>
+        </span>    
+        <div class="modal" id="exampleModal" tabindex="-1">
+          <div class="modal-dialog modal-sm modal-fullscreen-md-down modal-dialog-scrollable w-75">
+            <div class="modal-content mx-5">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h2>Log in</h2>
+                    <hr>
+                    <input class="form-control" placeholder="Email"><br>
+                    <input class="form-control" placeholder="password">
+                    <p>Forgot password?<a href="#">Reset it</a></p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+          </div>
+        </div>
+            <!-- Modal End -->
+        
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <h5 class="offcanvas-title position-absolute ms-5 " id="offcanvasNavbarLabel"><img src="images/1.svg"></h5>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Departments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">More Ways to Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Help</a>
+                </li>
+                
+                <!-- <li class="nav-item dropend">
+                    <a class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                    </a>
+                    <ul class="dropdown-menu w-25">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                        <hr class="dropdown-divider bg-warning">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+  </nav>
+  <!-- NAV END -->
+  <!-- AFTER NAV -->
+    <div class="container-fluid" style="background: #DEEDD6;">
+        <div class="row">
+            <div class="col-lg-1 mt-5 ps-4">
+                <select class="btn btn-light">
+                    <option selected onclick="func2()">US</option>
+                    <option onclick="func1()">CA</option>
+                </select>
+            </div>
+            <div class="col-lg-5 mt-5">
+                <h1 class="a">Order groceries for delivery or pickup today</h1>
+                <p>Whatever you want from local stores, brought right to your door.</p>
+            </div>
+            <div class="col-lg-5" id="rer">
+                <img src="images/4.jpg">
+            </div>
+        </div>
+    </div>
+
+  <h3 class="text-center py-5">Choose your store in <a id="a">San Francisco Bay Area</a></h3>
+  <div class="container px-4"> 
+    <div class="row">
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-8">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-10">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-10">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-8">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-10">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-10">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-8">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-10">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-10">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-8">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-10">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg">
+            <div class="row z">
+                <div class="col-2">
+                    <img src="images/2.webp">
+                </div>
+                <div class="col-10">
+                    <h6>Sprouts Farmer Market</h6>
+                    <p>Delivery* Pickup 7.5mni</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br />
+  <div class="container rounded-4">
+    <div class="row w-100 h-100">
+        <img src="images/63.jpg" id="oii" alt="logo">
+    </div>
+  </div>
+  
+  <h1 class="text-center p-5">Grocery delivery you can count on</h1>
+  
+  <div class="container">
+    <div class="row row-cols-md-3 ter">
+        <span class="">
+          <div class="card rounded-4 h-100">
+            <div class="card-body p-5">
+              <h2 class="card-title fw-bold">Choose what you want</h2>
+              <p class="card-text">Select items from your favorite grocery stores at Instacart.com or in the app.</p>
+            </div>
+            <img src="images/7.webp" class="card-img-top rounded-2" alt="...">
+          </div>
+        </span>
+        <span class="">
+          <div class="card rounded-4 h-100">
+            <div class="card-body p-5">
+              <h2 class="card-title  fw-bold">See real-time updates</h2>
+              <p class="card-text">Personal shoppers pick items with care. Chat as they shop and manage your order</p>
+            </div>
+            <img src="images/8.webp" class="card-img-top rounded-2" alt="...">
+          </div>
+        </span>
+        <span class="col-sm-4">
+          <div class="card rounded-4 h-100">
+            <div class="card-body p-5">
+              <h2 class="card-title fw-bold">Get your items same day</h2>
+              <p class="card-text">Pick a convenient time for you. Enjoy Instacart’s 100% quality guarantee on every order.</p>
+            </div>
+            <img src="images/9.webp" class="card-img-top rounded-2" alt="...">
+          </div>
+        </span>
+      </div>
+  </div>
+
+  <button class="btn btn-success my-5 btn-lg" style="margin-left: 45%;">Start Shopping</button>
+  <h1 class="text-center">The world's largest online<br /> grocery service</h1>
+  <div class="container">
+    <div class="row">
+        <img class="p-5" src="images/10.webp">
+    </div>
+    <div class="row">
+        <div class="col-lg p-4" style="background: rgba(236, 236, 236, 0.952);">
+            <h2>500 million Products</h2>
+            <p>available to shop across the catalog</p>
+        </div>&nbsp;&nbsp;
+        <div class="col-lg p-4" style="background: rgba(236, 236, 236, 0.952);">
+            <h2>40,000 stores</h2>
+            <p>from local grocers to chain stores</p>
+        </div>&nbsp;&nbsp;
+        <div class="col-lg p-4" style="background: rgba(236, 236, 236, 0.952);">
+            <h2>5,500+ cities</h2>
+            <p>served across the U.S. & Canada</p>
+        </div>&nbsp;&nbsp;
+        <div class="col-lg p-4" style="background: rgba(236, 236, 236, 0.952);">
+            <h2>Millions of orders</h2>
+            <p>delivered or picked up yearly</p>
+        </div>
+    </div>
+  </div>
+
+  <h2 class="text-center py-5">Common Questions</h2>
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#a1"
+        aria-expanded="true">
+            How does instacart delivery and curbside pickup work?
+        </button>
+        </h2>
+        <div id="a1" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+            <p>Instacart makes it easy to order from your favorite stores. Shop for items from stores near you, with a selection of more than 500 retailers and trusted local grocers across North America. Then, Instacart will connect you with a personal shopper in your area to shop and deliver your order. Contactless delivery is available with our “Leave at my door” option.<br /><br />
+                You can track your order’s progress and communicate with your shopper every step of the way using the Instacart app or website.<br /><br />
+                Instacart also offers curbside pickup at select retail locations. Simply place your order and choose a pickup time, and a shopper will prepare your order at the store.<br /><br />
+                When you get to the store, use the Instacart app to notify us. Depending on the store, a shopper or store employee will bring the groceries to your car, or you can pick them up at the designated area.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#a2"
+        aria-expanded="false">
+            how much does instacart cost
+        </button>
+        </h2>
+        <div id="a2" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            You don’t need a membership to order with Instacart. In fact, you can even order from warehouse clubs, like Costco, Sam’s Club, and BJ’s Wholesale Club, without a retailer club membership.<br><br>
+            To get started, create an account, select the store you want to shop, and place your order. New customers may be eligible for free delivery promotions.<br><br>
+            Delivery: Fees start at $3.99 for same-day orders over $35. Fees vary for one-hour deliveries, club store deliveries, and deliveries under $35.<br><br>
+            Pickup: There may be a “pickup fee” (equivalent to a delivery fee for pickup orders) on your pick up order.<br><br>
+            Service fees: Service fees vary and are subject to change based on factors like location and the number and types of items in your cart. Orders containing alcohol have a separate service fee.<br><br>
+            With an optional Instacart+ membership, you can get $0 delivery fee on every order over $35 and lower service fees too.
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#a3"
+        aria-expanded="false">
+            What's happens if there's an issue with my order
+        </button>
+        </h2>
+        <div id="a3" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <p>If something isn’t right, you’ve got options. In the Instacart app or website, you can report:</p>
+            <ul>
+                <li>Missing items</li>
+                <li>Incorrect items</li>
+                <li>Damaged items</li>
+                <li>Poor replacements</li>
+                <li>Early/late orders</li>
+            </ul>
+            <p>If an order never came, or you get someone else’s order, you can reach out to Instacart Care.</p>
+        </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#a4"
+        aria-expanded="false">
+            Can i get Contactless deliveries with instacart
+        </button>
+        </h2>
+        <div id="a4" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <p>The health and safety of our community is our number one priority. We are excited to offer contactless delivery through our Leave at My Door delivery feature.<br /><br />
+                Leave at My Door delivery gives you the flexibility to have your groceries delivered without having to come to the door or be at home. You can leave delivery instructions for your shopper at checkout, and we’ll notify you when your order arrives.<br /><br />
+                Leave at My Door is now the default setting for all Instacart deliveries. If you’d prefer to not use this feature, simply uncheck the box that says “Leave at my door if I’m not around” at checkout.<br /><br />
+                Customers who order alcohol, prescriptions, or certain high-value items may need to show ID upon delivery. We ask shoppers to wear masks whenever they come into contact with customers.
+            </p>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-5">
+    <hr />
+</div>  
+<div class="container">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <p class="fw-bold fs-4 ps-3">Get deliveries with Instacart</p>
+            <span class="ps-3"><i class="bi bi-apple">&nbsp;&nbsp;</i>ios&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-google-play">&nbsp;&nbsp;</i>Android</span>
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Top Departments
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                More Departments
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Instacart Programs
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Get to know us
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+            </div>
+          </div>
+      </div>
+
+      <br /><br />
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <p></p>
+        <div class="accordion-item">
+            <p class="fw-bold fs-4 ps-3">Become a shoppper</p>
+            <span><i class="bi bi-apple ps-3">&nbsp;&nbsp;</i>ios&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-google-play">&nbsp;&nbsp;</i>Android</span>
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Make money with us
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Top Cities
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              More Cities
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Shopper help
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+            </div>
+          </div>
+      </div>
+     
+     <div class="row axa">
+        <div class="col-4">
+            <p class="fw-bold fs-4">Get deliveries with Instacart</p>
+            <span><i class="bi bi-apple">&nbsp;&nbsp;</i>ios&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-google-play">&nbsp;&nbsp;</i>Android</span>
+        </div>
+        <div class="col">
+            <p class="fw-bold">Top Departments</p>
+            <p>Fresh produce</p>
+            <p>Dairy Produce</p>
+            <p>Meat</p>
+            <p>Meat Alternatives</p>
+            <p>Seafood</p>
+            <p>Pantry Food</p>
+            <p>Baked Goods</p>
+            <p>View All Departments</p>
+        </div>
+        <div class="col">
+            <p class="fw-bold">More Departments</p>
+            <p>Fresh produce</p>
+            <p>Dairy Produce</p>
+            <p>Meat</p>
+            <p>Meat Alternatives</p>
+            <p>Seafood</p>
+            <p>Pantry Food</p>
+            <p>Baked Goods</p>
+            <p>View All Departments</p>
+        </div>
+        <div class="col">
+            <p class="fw-bold">Instacart programs</p>
+            <p>Fresh produce</p>
+            <p>Dairy Produce</p>
+            <p>Meat</p>
+            <p>Meat Alternatives</p>
+            <p>Seafood</p>
+            <p>Pantry Food</p>
+        </div>
+        <div class="col">
+            <p class="fw-bold">Get to know us</p>
+            <p>Fresh produce</p>
+            <p>Dairy Produce</p>
+            <p>Meat</p>
+            <p>Meat Alternatives</p>
+        </div>
+     </div> 
+     <div class="container pt-3">
+        <hr />
+     </div>
+     <div class="row axa">
+        <div class="col-4">
+            <p class="fw-bold fs-4">Become a shoppper</p>
+            <span><i class="bi bi-apple">&nbsp;&nbsp;</i>ios&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-google-play">&nbsp;&nbsp;</i>Android</span>
+        </div>
+        <div class="col">
+            <p class="fw-bold">Top Departments</p>
+            <p>Fresh produce</p>
+            <p>Dairy Produce</p>
+            <p>Meat</p>
+            <p>Meat Alternatives</p>
+            <p>Seafood</p>
+            <p>Pantry Food</p>
+            <p>Baked Goods</p>
+            <p>View All Departments</p>
+        </div>
+        <div class="col">
+            <p class="fw-bold">More Departments</p>
+            <p>Fresh produce</p>
+            <p>Dairy Produce</p>
+            <p>Meat</p>
+            <p>Meat Alternatives</p>
+            <p>Seafood</p>
+            <p>Pantry Food</p>
+            <p>Baked Goods</p>
+            <p>View All Departments</p>
+        </div>
+        <div class="col">
+            <p class="fw-bold">Instacart programs</p>
+            <p>Fresh produce</p>
+            <p>Dairy Produce</p>
+            <p>Meat</p>
+            <p>Meat Alternatives</p>
+            <p>Seafood</p>
+            <p>Pantry Food</p>
+        </div>
+        <div class="col">
+            <p class="fw-bold">Get to know us</p>
+            <p>Fresh produce</p>
+            <p>Dairy Produce</p>
+            <p>Meat</p>
+            <p>Meat Alternatives</p>
+        </div>
+     </div> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1></h1>
+  <script>
+        // let a = "THIS IS A STUDENT PROJECT AND NOT AN ATTEMPT TO CLONE THE  EXISTING WEBPAGE"
+        // alert(a)
+
+    function test() {
+        alert(a)
+    }
+    function func1() {
+        document.getElementById("a").innerHTML="Greater Monreal Area, QC"
+    }
+    function func2() {
+        document.getElementById("a").innerHTML="San Francisco Bay Area"
+    }
+
+    
+        // let b = document.getElementById("g");
+        //     b.innerHTML="oyo";
+        //     b.style.fontSize ="20px";
+    
+  </script>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>THIS IS A STUDENT PROJECT AND NOT AN ATTEMPT TO CLONE THE EXISTING WEBPAGE</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+</body>
+</html>

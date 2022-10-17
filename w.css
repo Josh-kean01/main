@@ -1,0 +1,44 @@
+.dropdown{
+    position:relative;
+  }
+.dropdown-menu{
+    position:absolute;
+    display:none;
+  }
+.dropdown:hover .dropdown-menu{display:block;
+  }
+.zee{
+    padding-left: 80px;
+}
+#yog{
+  background-image: linear-gradient(#128C7E,red 100%);
+  color: beige;
+  font-weight: 700;
+  font-size: xx-large;
+  height: 50px;
+  width: 85%;
+}
+#yoy{
+  background: #128c5d;
+  color: antiquewhite;
+  font-weight: 900;
+  font-size: xx-large;
+  height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 15%;
+}
+@media (max-width:768px){
+  #yog{
+    padding-top: 2%;
+    font-size: large;
+    height: 40px;
+  }
+  #yoy{
+    padding-top: 2%;
+    font-size: medium;
+    text-indent: -10px;
+    height: 40px;
+  }
+}
+
