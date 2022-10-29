@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+
+
+  <style>
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: relative;
+      display: none;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      border: none;
+    }
+
+    .a {
+      font-size: large;
+      color: gray;
+      font-weight: 500;
+    }
+
+    .b {
+      font-size: larger;
+      color: rgb(26, 115, 232);
+      font-weight: 600;
+    }
+
+    .c {
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    #z {
+      background: rgba(230, 230, 230, 0.288);
+    }
+
+    #z:hover {
+      background: rgba(0, 0, 255, 0.082);
+    }
+
+    #kep {
+      color: rgb(65, 136, 228);
+    }
+
+    #kep:hover {
+      background: rgb(210, 226, 255);
+    }
+
+    #ker {
+      color: grey;
+      font-size: large;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top shadow px-3" style="background: white; height: 50px;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="images/25f.svg" style="height: 30px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon" style="height: 20px; width: 20px;"></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Products
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Build</a></li>
+                <li><a class="dropdown-item" href="#">Release & monitor</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Engage</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Use Cases</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">pricing</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Docs
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Overview</a></li>
+                <li><a class="dropdown-item" href="#">Fundamentals</a></li>
+                <li><a class="dropdown-item" href="#">Build</a></li>
+                <li><a class="dropdown-item" href="#">Release & monitor</a></li>
+                <li><a class="dropdown-item" href="#">Engage</a></li>
+                <li><a class="dropdown-item" href="#">References</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Samples</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Support</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Other projects
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Meta</a></li>
+                <li><a class="dropdown-item" href="whatsapp.html">WhatsApp</a></li>
+                <li><a class="dropdown-item" href="name.html">Name</a></li>
+                <li><a class="dropdown-item" href="instarcart.html">Instacart</a></li>
+                <li><a class="dropdown-item" href="ipage.html">ipage</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex input-group-md" id="a">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <a class="input-group-text me-2" style="background: white;" type="serach" href="#"><i
+                class="bi bi-search"></i></a>
+          </div>&nbsp;&nbsp;&nbsp;
+          <div>
+            <select class="form-select-sm" id="pol" style="overflow-y: scroll;">
+              <option selected><i class="bi bi-globe"></i>English</option>
+              <option value="1">English</option>
+              <option value="2">Bahasa-indonesia</option>
+              <option value="3">Espanol</option>
+              <option value="4">Portuguese</option>
+              <option value="5">한국어</option>
+              <option value="6">日本語</option>
+              <option value="7">EJJJJS</option>
+            </select>&nbsp;&nbsp;&nbsp;
+          </div>
+          <div class="">
+            <a href="#">Go to console</a>
+            <a href="#">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="py-3 px-3" style="background: #E1F3FC; font-size: 13px; color: #1966d3e0; font-weight: 700;">
+    <p>Join us in person and online for Firebase Summit on October 18, 2022. Learn how Firebase can help you accelerate
+      app development, release your app with confidence, and scale with ease. <a href="#">Register now</a></p>
+  </div>
+  <div style="background-image: linear-gradient(#1966d3 50%, rgba(255, 255, 255, 0.596) 30%, white) ;">
+    <br>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-6">
+          <p class="text-light lh-sm" style="font-size: 50px; font-weight: 600;">Make your app the best it can be</p>
+          <p class="text-light fs-4">Firebase is an app development platform that helps you build and grow apps and
+            games users love.
+            Backed by Google and trusted by millions of businesses around the world. </p>
+          <button class="btn btn-lg btn-light" style="font-size: x-large; color: #1966d1d3;">Get Started</button>
+          <button class="btn btn-link btn-primary btn btn-sm" style="color: white; text-decoration: none;">Try
+            Demo</button>
+          <div class="vr" style="border: 1px solid white;"></div>
+          <button class="btn btn-link btn-primary btn btn-sm" style="color: white; text-decoration: none;">Watch
+            Video</button>
+        </div>
+        <div class="col-lg-6 my-5">
+          <video src="videos/1f.webm" autoplay loop style="height: 80%; width: 100%;"></video>
+        </div>
+      </div>
+    </div>
+    <!-- END -->
+
+    <!-- START -->
+    <div class="container rounded-4 text-center lh-base pt-5" style="background: white;">
+      <p class="fs-1 px-5">Products and solutions you can rely on through your app's journey </p>
+      <div class="row px-5">
+        <div class="col-lg rounded-4 shadow-sm p-5 border-dark" id="z">
+          <img src="images/26f.jpg">
+          <p class="c">Build</p>
+          <p class="a">Accelerate app development with fully managed backend infrastructure</p>
+          <p class="b">View all Build Products</p><br>
+          <h5><i class="bi bi-chevron-double-up"></i>Cloud Firestone</h5><br>
+          <h5><i class="bi bi-person-lines-fill"></i>Authetication</h5><br>
+          <h5><i class="bi bi-git"></i>Extensions</h5>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg rounded-4 shadow-sm p-5 border-dark" id="z">
+          <img src="images/27f.jpg">
+          <p class="c">Release & Monitor</p>
+          <p class="a">Release with confidence and monitor perfomance and stability</p>
+          <p class="b">View all Release & Monitor Products</p><br>
+          <h5><i class="bi bi-gear-fill"></i>Crashlytics</h5><br>
+          <h5><i class="bi bi-speedometer"></i>Perfomance monitoring</h5><br>
+          <h5><i class="bi bi-bar-chart-fill"></i>Google analytics</h5>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg rounded-4 shadow-sm p-5 border-dark" id="z">
+          <img src="images/28f.jpg">
+          <p class="c">Engage</p>
+          <p class="a">Boost user engagement with rich analytics, A/B testing and Messaging campaigns</p>
+          <p class="b">View all Engage Products</p><br>
+          <h5><i class="bi bi-alt"></i>Remote config</h5><br>
+          <h5><i class="bi bi-cloud-haze2"></i>Cloud Messaging</h5><br>
+          <h5><i class="bi bi-cup-straw"></i></i>A/B testing</h5>
+        </div>
+      </div><br>
+      <button type="button" class="btn dropup mx-auto my-5 bi-arrows-angle-contract" data-bs-toggle="collapse"
+        data-bs-target="#ker" role="button" aria-expanded="false" id="kep">
+        All Products
+      </button>
+      <div class="collapse container-sm p-3 lh-lg text-lg-start" id="ker">
+        <div class="row">
+          <div class="col-lg">
+            <ul style="list-style-type: none;">
+              <li><i class="bi bi-chevron-double-up"></i>Cloud Firestone</li>
+              <li><i class="bi bi-tools"></i>Extensions</li>
+              <li><i class="bi bi-shield-check"></i>App Check</li>
+              <li><i class="bi bi-braces-asterisk"></i>Cloud Functions</li>
+              <li><i class="bi bi-person"></i>Authetication</li>
+              <li><i class="bi bi-globe2"></i>Hosting</li>
+              <li><i class="bi bi-folder2"></i>Cloud Storage</li>
+              <li><i class="bi bi-toggles"></i> Realtime Database</li>
+            </ul>
+          </div>
+          <div class="col-lg">
+            <ul style="list-style-type: none;">
+              <li><i class="bi bi-gear-fill"></i>Crashlytics</li>
+              <li<i class="bi bi-speedometer"></i>Perfomance Monitoring</li>
+                <li><i class="bi bi-file-earmark-check-fill"></i>Test Lab</li>
+                <li><i class="bi bi-box-seam"></i>App Distribution</li>
+                <li><i class="bi bi-bar-chart-fill"></i>Google Analytics</li>
+                <li><i class="bi bi-laptop-fill"></i>Machine Learning</li>
+            </ul>
+          </div>
+          <div class="col-lg">
+            <ul style="list-style-type: none;">
+              <li><i class="bi bi-phone-flip"></i>In-App Messaging</li>
+              <li><i class="bi bi-cup-straw"></i>A/B Testing</li>
+              <li><i class="bi bi-cloud-haze2"></i>Cloud Messaging</li>
+              <li><i class="bi bi-alt"></i>Remote Configuration</li>
+              <li><i class="bi bi-capsule"></i>Dynamic Links</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="p-5">
+        <h1>Firebase Extensions</h1>
+        <p>Install pre-packaged, open-source bundles of code to automate common development tasks</p>
+        <div class="row row-cols-2 mx-5">
+          <div class="col-lg">
+            <img src="images/1f.png" style="width: 25%;">
+            <p>Stream Collections to BigQuery</p>
+          </div>
+          <div class="col-lg">
+            <img src="images/2f.png" style="width: 25%;">
+            <p>Search with Angola</p>
+          </div>
+          <div class="col-lg">
+            <img src="images/3f.png" style="width: 25%;">
+            <p>Trigger Email</p>
+          </div>
+          <div class="col-lg">
+            <img src="images/4f.png" style="width: 25%;">
+            <p>Run Payments with Stripe</p>
+          </div>
+        </div>
+        <button class="btn btn-lg" style="background: #1967D2; color: white;">View all Extensions</button>
+      </div>
+      <div class=" rounded-bottom"
+        style="margin-left: -1%; width: 102.1%; background: #ECEFF1; color: rgb(97, 97, 97); font-size: large;">
+        <p class="p-3">Firebase supports:&nbsp;&nbsp;&nbsp;<i class="bi bi-android2">&nbsp;&nbsp;</i><i
+            class="bi bi-box">&nbsp;&nbsp;</i><i class="bi bi-arrows-angle-contract"></i></p>
+      </div>
+    </div>
+    <div class="container rounded-4 text-center lh-base pt-5" style="background: white;">
+      <h1>Integrations</h1>
+      <p>Easily integrate Firebase with your team's favorite tools </p>
+      <div class="row row-cols-4 p-5">
+        <div class="col-lg-1">
+          <img src="images/5f.svg" style="width: 100%;">
+          <p>Google Ads</p>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg-1">
+          <img src="images/6f.svg" style="width: 100%;">
+          <p>AdMobs</p>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg-1">
+          <img src="images/7f.svg" style="width: 100%;">
+          <p>Google Marketing Platform</p>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg-1">
+          <img src="images/8f.png" style="width: 100%;">
+          <p>Google Play</p>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg-1">
+          <img src="images/cf.svg" style="width: 100%;">
+          <p>Data Studio</p>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg-1">
+          <img src="images/20f.svg" style="width: 100%;">
+          <p>BigQuery</p>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg-1">
+          <img src="images/21f.svg" style="width: 100%;">
+          <p>Slack</p>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg-1">
+          <img src="images/22f.svg" style="width: 100%;" alt="logo">
+          <p>Jira</p>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-lg-1">
+          <img src="images/23f.png" style="width: 100%;" alt="logo">
+          <p>PagerDuty</p>
+        </div>
+      </div>
+      <input class="btn btn-lg" style="color: white; background: #1966d3;" value="Learn More"></input>
+      <div class="container-fluid rounded-bottom my-5 p-2"
+        style="margin-left: -1%; width: 102.1%; background: #ECEFF1; color: rgb(97, 97, 97); font-size: large;">
+        <div class="row">
+          <div class="col-lg" style="display: flex; justify-content: end;">
+            <img src="images/9f.png" alt="logo" style="height: 70%;">
+          </div>
+          <div class="col-lg text-lg-start">
+            <h4>Google Cloud + Firebase</h4>
+            <p style="font-size: medium;">Firebase projects are backed by Google Cloud, <br>
+              letting you scale your app to billions of users. </p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container p-5 mb-3 shadow rounded-4 text-center lh-base pt-5 bg-light">
+      <h1 class="fw-bold">Trusted by the largest apps and games</h1>
+      <p>Development teams around the world—including NPR, Halfbrick, Duolingo,<br />
+        and Venmo—use Firebase to ship their apps.
+      </p>
+      <div class="row row-cols-lg-4">
+        <div class="col-6">
+          <img src="images/10f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/11f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/12f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/13f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/11f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/13f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/12f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/10f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/10f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/11f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/13f.png" style="width: 100%;" alt="">
+        </div>
+        <div class="col-6">
+          <img src="images/12f.png" style="width: 100%;" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="container shadow rounded-4 text-center lh-base pt-5 my-5" style="background: white;">
+      <h1 class="fw-bold">News & events</h1>
+      <div class="row p-5 text-start">
+        <div class="col-lg">
+          <img src="images/14f.png" style="width: 100%;" class="mb-4" alt="">
+          <h5 style="font-weight: 600;">What's new at Firebase Summit 2022</h5>
+          <p style="font-size: small; color: rgba(0, 0, 0, 0.603);">
+            Learn how Firebase is strengthening integrations across Google's developer products and the open
+            ecosystem of developer tools to help you accelerate app development, run your app with confidence,
+            and make your app the best it can be.
+          </p>
+          <button class="btn btn-link btn-secondary fw-bold" style="text-decoration: none;">learn More</button>
+        </div>
+        <div class="col-lg">
+          <img src="images/15f.jpg" alt="" class="mb-4" style="width: 100%;">
+          <h5 style="font-weight: 600;">Firebase Release Notes October 2022: Top 5 takeaways from Firebase Summit</h5>
+          <p style="font-size: small; color: rgba(0, 0, 0, 0.603);">Welcome to the October 2022 edition of Firebase
+            Release Notes with Frank van Puffelen.
+            In this video, Puf discusses the top news from Firebase
+          </p>
+          <button class="btn btn-link btn-secondary fw-bold" style="text-decoration: none;">View Video</button>
+        </div>
+        <div class="col-lg">
+          <img src="images/16f.png" alt="" class="mb-4" style="width: 100%;">
+          <h5 style="font-weight: 600;">#FirebaserFriday: Frank van Puffelen</h5>
+          <p style="font-size: small; color: rgba(0, 0, 0, 0.603);">Join us for the monthly mini-profiles on Firebase
+            team members,
+            aka “Firebasers”, from all around the world! Learn about their backgrounds, how
+          </p>
+          <button class="btn btn-link btn-secondary fw-bold" style="text-decoration: none;">Read More</button>
+        </div>
+      </div>
+    </div>
+    <div class="container bg-light rounded-4 text-center pt-5 px-5 mb-5">
+      <h1>Common Use Cases</h1>
+      <p>Use Firebase products together to solve complex challenges and optimize your app experience.
+        Personalize your onboarding flow, grow user engagement, or add new functionality with
+        Firebase.
+      </p>
+      <div class="container" style="background-image: url(images/17f.png); padding: 15%;">
+        <button class="btn btn-primary btn-lg">View Use Cases</button>
+      </div>
+    </div>
+    <div class="text-center m-5 p-5 lh-lg">
+      <img src="images/24f.png" style="height: 100%" alt="">
+      <h1>Try Firebase Today</h1>
+      <p>Integrating it into your app is easy.</p>
+      <button class="btn btn-primary btn-lg">Get Started</button>
+    </div>
+  </div>
+  <footer class="mt-5 px-2">
+    <div class="container-fluid bg-light">
+      <div class="row">
+        <div class="col-lg lh-sm">
+          <br>
+          <p style="font-weight: 510;">Learn</p>
+          <p>Guides</p>
+          <p>Reference</p>
+          <p>Samples</p>
+          <p>Libraries</p>
+          <p>GitHub</p>
+          <br>
+          <br>
+        </div>
+        <div class="col-lg lh-sm">
+          <br>
+          <p style="font-weight: 510;">Stay Connected</p>
+          <p>Guides</p>
+          <p>Reference</p>
+          <p>Samples</p>
+          <p>Libraries</p>
+          <p>GitHub</p>
+          <br>
+          <br>
+        </div>
+        <div class="col-lg lh-sm">
+          <br>
+          <p style="font-weight: 510;">Support</p>
+          <p>Guides</p>
+          <p>Reference</p>
+          <p>Samples</p>
+          <p>Libraries</p>
+          <p>GitHub</p>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="container-fluid" style="word-spacing: 2pc; display: flexbox;">
+      <img src="images/19f.svg" style="width: 20%;" alt="">
+      <a>Android</a>
+      <a>Chrome</a>
+      <a>Firebase</a>
+      <a>Google Cloud Platform</a>
+      <a>All products</a>
+    </div>
+
+    <hr />
+    <div class="px-3">
+      <p>Terms | Privacy
+        <select class="form-select-sm float-end me-2">
+          <option value="" selected>English</option>
+          <option value="">Bahasa-indonesia</option>
+          <option value="">Francais</option>
+          <option value="">Portuguese</option>
+          <option value="">Japanese</option>
+        </select>
+      </p>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
