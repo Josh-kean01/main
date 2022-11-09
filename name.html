@@ -393,13 +393,13 @@
 
 
 
+    <!-- FORM -->
 
-
-
+ 
     <div class="container-lg my-5">
       <div class="row justify-content-center">
         <div class="col-md-7">
-          <form class="rounded-4 shadow-lg px-3 py-5" id="poo">
+          <form class="rounded-4 shadow-lg px-3 py-5" method="post"  onsubmit="return(validate())" name="myForm" id="poo">
             <p id="oze">Create a Name.com Account</p>
             <label for="">Already have an account?<a href="#" style="color: #00b341;">Log in</a></label>
             <hr>
@@ -408,57 +408,57 @@
               <div class="row  justify-content-center">
                 <div class="col-lg-6">
                   <label class="form-label">PICK A USERNAME</label>
-                  <input class="form-control" type="text">
+                  <input name="a" class="form-control" type="text">
                 </div>
                 <div class="col-lg-6">
                   <label class="form-label">CREATE A PASSWORD</label>
-                  <input class="form-control" type="password">
+                  <input name="b" class="form-control" type="password">
                   <div style="font-size: x-small; color:red; line-height: normal;">
-                    <p>minimum lenght 7 characters</p>
-                    <p>must contain 1 letter</p>
+                    <p>minimum length 7 characters</p>
+                    <p>maximum length 16 characters</p>
                     <p>must contain 1 number/symbol</p>
                   </div>
                 </div>
               </div>
-              <h6>CONTACT DETALS</h6>
+              <h6>CONTACT DETAILS</h6>
               <div class="row">
                 <div class="col-lg-6">
                   <label for="" class="form-label">FIRST NAME</label>
-                  <input class="form-control" type="text">
+                  <input name="c" class="form-control" type="text">
                 </div>
                 <div class="col-lg-6">
                   <label class="form-label">LAST NAME</label>
-                  <input class="form-control" type="text">
+                  <input name="d" class="form-control" type="text">
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">
                   <label class="form-label">ORGANIZATION</label>
-                  <input class="form-control" type="text">
+                  <input name="e" class="form-control" type="text">
                 </div>
               </div><br />
               <div class="row">
                 <div class="col-lg-6">
                   <label class="form-label">PHONE-NUMBER</label>
                   <div class="input-group dropdown" id="eaa">
-                    <span class="input-group-text dropdown-toggle" id="eab" data-bs-toggle="dropdown">@</span>
+                    <span class="input-group-text dropdown-toggle" id="eab" data-bs-toggle="dropdown">🏴</span>
                     <ul class="dropdown-menu" id="eac">
                       <li><a class="dropdown-item" href="#">1</a></li>
                       <li><a class="dropdown-item" href="#">2</a></li>
                       <li><a class="dropdown-item" href="#">3</a></li>
                     </ul>
-                    <input class="form-control" type="text">
+                    <input name="f" class="form-control" type="text">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <label class="form-label">E-MAIL</label>
-                  <input class="form-control" type="text">
+                  <input name="g" class="form-control" type="email">
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">
-                  <label class="form-label">ADDRESS LINE 1</label>
-                  <input class="form-control" type="text">
+                  <label class="form-label">ADDRESS LINE 1*</label>
+                  <input name="h" class="form-control" type="text">
                 </div>
               </div>
               <div class="row">
@@ -470,40 +470,45 @@
               <div class="row">
                 <div class="col-lg-4">
                   <label class="form-label">CITY</label>
-                  <input class="form-control" type="text">
+                  <input name="i" class="form-control" type="text">
                 </div>
                 <div class="col-lg-4 col-sm-6">
                   <label class="form-label">STATE/PROVINCE</label>
-                  <input class="form-control" type="text">
+                  <input name="j" class="form-control" type="text">
                 </div>
                 <div class="col-lg-4 col-sm-6">
                   <label class="form-label">ZIP/POSTAL CODE</label>
-                  <input class="form-control" type="text">
+                  <input name="k" class="form-control" type="text">
                 </div>
               </div>
             </div>
             <br />
-            <select class="form-select" style="width: 40%; margin-left: 10px;" id="pol">
-              <option selected>select a country</option>
+            <select name="l" class="form-select" style="width: 40%; margin-left: 10px;" id="pol">
+              <option value="-1" selected>select a country</option>
               <option value="1">uk</option>
               <option value="2">usa</option>
               <option value="3">togo</option>
               <option value="4">nigeria</option>
             </select>
             <br />
+          <div class="form-check">
             <input class="form-check-input" type="radio">
             <label class="form-check-label">I agree to the registration agreement and privacy policy</label><br /><br />
             <input class="form-check-input" type="radio">
             <label class="form-check-label">Send me Name.com's latest news, services, and promos<a><br />
                 (you can unsubscribe at anytime)</a>
             </label>
+          </div>
             <br /><br />
-            <button type="button" class="rounded-5 btn btn-lg btn-success col-lg-6" style="background: #0EAC48;">Create
+            <button type="submit" class="rounded-5 btn btn-lg btn-success col-lg-6" style="background: #0EAC48;">Create
               my Account</button>
           </form>
         </div>
       </div>
     </div>
+
+    <!-- FORM END -->
+
     <div class="container-fluid py-5 px-3" style="background: #EBEBEB;">
       <div class="row row-cols-2" id="ten">
         <div class="col-lg-3">
@@ -592,6 +597,85 @@
       </div>
     </div>
     <br />
+
+
+
+
+    <script>
+      function validate() {
+      let a = /^[a-zA-Z0-9]+$/;
+      let b = /^[a-zA-Z0-9!@#$%^&^*]{7,16}$/;
+      let c = /^[A-Z]+$/;
+      let d = /^[a-zA-Z]+$/;
+      let f = /^[0-9]+$/;
+      let g = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+
+      if(!document.myForm.a.value.match(a)){
+        alert("Username is required")
+        document.myForm.a.focus();
+        return false;
+      }
+      if(!document.myForm.b.value.match(b)){
+        alert("password is required")
+        document.myForm.b.focus();
+        return false;
+      }
+      if(!document.myForm.c.value.match(c)){
+        alert("Input your Surname in Capital Letter")
+        document.myForm.c.focus();
+        return false;
+      }
+      if(!document.myForm.d.value.match(d)){
+        alert("Input your Last name")
+        document.myForm.d.focus();
+        return false;
+      }
+      if(document.myForm.e.value===""){
+        alert("Organization Required")
+        document.myForm.e.focus();
+        return false;
+      }
+      if(!document.myForm.f.value.match(f)){
+        alert("Input your Number")
+        document.myForm.f.focus();
+        return false;
+      }
+      if(!document.myForm.g.value.match(g)){
+        alert("Input your E-mail")
+        document.myForm.g.focus();
+        return false;
+      }
+      if(document.myForm.h.value===""){
+        alert("Address Required")
+        document.myForm.h.focus();
+        return false;
+      }
+      if(!document.myForm.i.value.match(d)){
+        alert("Input your city")
+        document.myForm.i.focus();
+        return false;
+      }
+      if(!document.myForm.j.value.match(d)){
+        alert("Input your State")
+        document.myForm.j.focus();
+        return false;
+      }
+      if(document.myForm.k.value==""||document.myForm.k.value<5||isNaN(document.myForm.k.value)){
+        alert("Your Zip code must be five digits")
+        document.myForm.k.focus();
+        return false;
+      }
+      if(document.myForm.l.value==-1){
+        alert("Select from the available Countries")
+        document.myForm.l.focus();
+        return false;
+      }
+      else{
+        return true;
+      }
+
+      }
+    </script>
   </body>
 
 </html>
